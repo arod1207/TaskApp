@@ -1,32 +1,11 @@
 {
   "tasks": [
     {
-      "newTask": "tesy",
-      "date": "2021-01-28",
-      "time": "15:33",
+      "newTask": "Oh yea",
+      "date": "2022-12-09",
+      "time": "14:34",
       "done": false,
       "id": 1
-    },
-    {
-      "newTask": "due today",
-      "date": "2021-01-23",
-      "time": "15:33",
-      "done": false,
-      "id": 2
-    },
-    {
-      "newTask": "yesy",
-      "date": "2021-01-23",
-      "time": "15:33",
-      "done": false,
-      "id": 3
-    },
-    {
-      "newTask": "31",
-      "date": "2021-01-31",
-      "time": "15:33",
-      "done": false,
-      "id": 4
     }
   ]
 }

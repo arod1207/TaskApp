@@ -28,6 +28,8 @@ const AddTask = () => {
             const data = res.data;
             setTasks([...tasks, data]);
             setNewTask('');
+            setTime('');
+            setDate('');
         }
     };
 

@@ -39,7 +39,7 @@ const Task = () => {
                                           'h:mm A'
                                       )}
                             </p>
-                            <p>{moment(task.date).format('MMMM Do YYYYY')}</p>
+                            <p>{moment(task.date).format('MMMM Do YYYY')}</p>
                         </div>
                         <div className="task__delete">
                             <i
