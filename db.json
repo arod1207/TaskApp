@@ -1,0 +1,14 @@
+{
+  "tasks": [
+    {
+      "newTask": "Simple task app",
+      "done": false,
+      "id": 1
+    },
+    {
+      "newTask": "oh yea",
+      "done": false,
+      "id": 2
+    }
+  ]
+}
