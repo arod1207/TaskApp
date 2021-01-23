@@ -100,17 +100,20 @@ body {
 
 .tasks {
     background: rgb(242, 237, 237);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 15px;
     padding: 10px;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.task__test {
+    display: flex;
+    flex-direction: column;
 }
 
 .tasks h3 {
-    font-weight: normal;
-    margin-left: 1rem;
+    font-weight: bold;
 }
 
 .task__complete h3 {
@@ -137,4 +140,10 @@ body {
     background: transparent;
     color: red;
     cursor: pointer;
+}
+
+.task__delete {
+    display: grid;
+    flex-direction: column;
+    align-items: center;
 }

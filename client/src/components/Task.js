@@ -1,4 +1,5 @@
 import axios from 'axios';
+import moment from 'moment';
 import { useContext } from 'react';
 import { TaskContext } from '../TaskContext';
 
@@ -25,14 +26,22 @@ const Task = () => {
             ) : (
                 tasks.map((task) => (
                     <div
-                        key={task.id}
                         className={`tasks ${task.done ? 'task__complete' : ''}`}
+                        key={task.id}
                         onDoubleClick={() => toggleHandler(task.id)}
                     >
-                        <h3>{task.newTask}</h3>
-                        <br></br>
-                        <p>{task.date}</p>
-                        <div className="task__Delete">
+                        <div className="task__test">
+                            <h3>{task.newTask}</h3>
+                            <p>
+                                {task.time === ''
+                                    ? ''
+                                    : moment(task.time, 'HH:mm').format(
+                                          'h:mm A'
+                                      )}
+                            </p>
+                            <p>{moment(task.date).format('MMMM Do YYYYY')}</p>
+                        </div>
+                        <div className="task__delete">
                             <i
                                 className="fas fa-trash-alt fa-lg"
                                 onClick={() => deleteHandler(task.id)}
