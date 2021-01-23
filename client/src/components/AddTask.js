@@ -10,10 +10,6 @@ const AddTask = () => {
     const [time, setTime] = useState('');
     const [tasks, setTasks] = useContext(TaskContext);
 
-    console.log(time);
-
-    console.log(date);
-
     const addHandler = async (e) => {
         e.preventDefault();
         if (newTask === '') {

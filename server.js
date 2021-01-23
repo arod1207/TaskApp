@@ -3,6 +3,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 // route files //
 const newTask = require('./Routes/TaskAPI');
@@ -32,6 +33,15 @@ app.use(express.json());
 
 // API Routes //
 app.use('/', newTask);
+
+// Serve Static Assets if in production
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('client/build'));
+
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
+}
 
 // connect to server //
 app.listen(PORT, console.log(`Server running on http://localhost:${PORT}`));

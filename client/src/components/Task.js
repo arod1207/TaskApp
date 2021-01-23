@@ -5,7 +5,6 @@ import { TaskContext } from '../TaskContext';
 
 const Task = () => {
     const [tasks, setTasks] = useContext(TaskContext);
-    console.log(tasks);
 
     const deleteHandler = (id) => {
         axios.delete(`/tasks/${id}`);
