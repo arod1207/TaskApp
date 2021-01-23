@@ -22,7 +22,7 @@ const Task = () => {
 
     return (
         <div className="task">
-            {tasks.length === 0 ? (
+            {tasks && tasks.length === 0 ? (
                 <h1>No Task Today</h1>
             ) : (
                 tasks.map((task) => (
@@ -40,7 +40,11 @@ const Task = () => {
                                           'h:mm A'
                                       )}
                             </p>
-                            <p>{moment(task.date).format('MMMM DD YYYY')}</p>
+                            <p>
+                                {task.date === ''
+                                    ? ''
+                                    : moment(task.date).format('MMMM DD YYYY')}
+                            </p>
                         </div>
                         <div className="task__delete">
                             <i
