@@ -19,7 +19,7 @@ const AddTask = () => {
         if (newTask === '') {
             alert('Enter a Task');
         } else {
-            const res = await axios.post('http://localhost:5000/tasks/', {
+            const res = await axios.post('tasks/', {
                 newTask,
                 date,
                 time,

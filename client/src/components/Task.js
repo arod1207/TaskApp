@@ -5,16 +5,17 @@ import { TaskContext } from '../TaskContext';
 
 const Task = () => {
     const [tasks, setTasks] = useContext(TaskContext);
+    console.log(tasks);
 
     const deleteHandler = (id) => {
-        axios.delete(`http://localhost:5000/tasks/${id}`);
-        setTasks(tasks.filter((task) => task.id !== id));
+        axios.delete(`/tasks/${id}`);
+        setTasks(tasks.filter((task) => task._id !== id));
     };
 
     const toggleHandler = (id) => {
         setTasks(
             tasks.map((task) =>
-                task.id === id ? { ...task, done: !task.done } : task
+                task._id === id ? { ...task, done: !task.done } : task
             )
         );
     };
@@ -27,8 +28,8 @@ const Task = () => {
                 tasks.map((task) => (
                     <div
                         className={`tasks ${task.done ? 'task__complete' : ''}`}
-                        key={task.id}
-                        onDoubleClick={() => toggleHandler(task.id)}
+                        key={task._id}
+                        onDoubleClick={() => toggleHandler(task._id)}
                     >
                         <div className="task__test">
                             <h3>{task.newTask}</h3>
@@ -39,12 +40,12 @@ const Task = () => {
                                           'h:mm A'
                                       )}
                             </p>
-                            <p>{moment(task.date).format('MMMM Do YYYY')}</p>
+                            <p>{moment(task.date).format('MMMM DD YYYY')}</p>
                         </div>
                         <div className="task__delete">
                             <i
                                 className="fas fa-trash-alt fa-lg"
-                                onClick={() => deleteHandler(task.id)}
+                                onClick={() => deleteHandler(task._id)}
                             ></i>
                         </div>
                     </div>

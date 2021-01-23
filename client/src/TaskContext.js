@@ -8,7 +8,7 @@ export const TaskProvider = ({ children }) => {
 
     useEffect(() => {
         const getTask = async () => {
-            const res = await axios.get('http://localhost:5000/tasks/');
+            const res = await axios.get('tasks/');
             setTasks(res.data);
         };
         getTask();
