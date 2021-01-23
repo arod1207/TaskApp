@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "newTask": "test",
+      "date": "2021-01-22",
+      "done": false,
+      "id": 1
+    },
+    {
+      "newTask": "Go to the store",
+      "date": "2021-01-27",
+      "done": false,
+      "id": 2
+    },
+    {
+      "newTask": "yea",
+      "date": "2020-12-30",
+      "done": false,
+      "id": 3
+    }
+  ]
+}
