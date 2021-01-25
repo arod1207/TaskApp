@@ -4,9 +4,11 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const cors = require('cors');
 
 // route files //
 const newTask = require('./Routes/TaskAPI');
+const news = require('./Routes/NewsAPI.js');
 
 // initialize expresss //
 const app = express();
@@ -31,8 +33,12 @@ mongoose
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// CORS //
+app.use(cors());
+
 // API Routes //
 app.use('/', newTask);
+app.use('/', news);
 
 // Serve Static Assets if in production
 if (process.env.NODE_ENV === 'production') {

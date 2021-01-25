@@ -1,14 +1,18 @@
 import AddTask from './components/AddTask';
 import Header from './components/Header';
+import News from './components/News';
 
 import { TaskProvider } from './TaskContext';
 
 const App = () => {
     return (
         <TaskProvider>
-            <div className="container">
-                <Header />
-                <AddTask />
+            <div className="wholesite">
+                <News className="container" />
+                <div className="container">
+                    <Header />
+                    <AddTask />
+                </div>
             </div>
         </TaskProvider>
     );
