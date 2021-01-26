@@ -8,7 +8,7 @@ const App = () => {
     return (
         <TaskProvider>
             <div className="wholesite">
-                <News className="container" />
+                <News className="news__container" />
                 <div className="container">
                     <Header />
                     <AddTask />
